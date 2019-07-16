@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     Collider2D myCollider2D;
     Rigidbody2D myRigidbody;
-
+    bool isOnLadder;
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
 
@@ -29,6 +29,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(!(Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.RightArrow))))
+            isOnLadder = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isOnLadder = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -36,12 +45,34 @@ public class Player : MonoBehaviour
 
         myRigidbody = GetComponent<Rigidbody2D>();
     }
-
+    
 
     // Update is called once per frame
     void Update()
     {
-        Run();
-        Jump();
+        if (isOnLadder == true)
+        {
+            myRigidbody.gravityScale = 0;
+
+           if (Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.position += new Vector3(0, 0.1f);
+                //GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 2f);
+            }
+           if (Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.RightArrow)))
+            {
+                isOnLadder = false;
+            }
+            
+             
+        }
+        else
+        {
+            Run();
+            Jump();
+            myRigidbody.gravityScale = 1;
+        }
     }
+
+   
 }

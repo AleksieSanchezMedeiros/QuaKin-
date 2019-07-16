@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        Player = GameObject.FindObjectOfType<Player>().transform;
         //Calculate and store the offset value by getting the distance between the player's position and camera's position.
         offset = transform.position - Player.position;
 
@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     {
         if (!Player)
         {
-            Player = GameObject.FindGameObjectWithTag("Player").transform;
+            Player = GameObject.FindObjectOfType<Player>().transform;
         }
         else
         {
