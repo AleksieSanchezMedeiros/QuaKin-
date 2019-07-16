@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    
+
     Collider2D myCollider2D;
     Rigidbody2D myRigidbody;
     bool isOnLadder;
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isOnLadder = false;
+        
     }
     // Start is called before the first frame update
     void Start()
