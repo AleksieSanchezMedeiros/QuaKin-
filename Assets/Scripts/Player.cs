@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
+    private object DestroygameObject;
 
     private void Run()
     {
@@ -28,7 +29,10 @@ public class Player : MonoBehaviour
             myRigidbody.velocity += jumpVelocityToAdd;
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +41,7 @@ public class Player : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-
+    
     // Update is called once per frame
     void Update()
     {

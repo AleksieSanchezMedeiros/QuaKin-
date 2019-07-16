@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Permeet : MonoBehaviour
+public class FallonTrigger : MonoBehaviour
 {
+    void Fall()
+    {
+
+    }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
