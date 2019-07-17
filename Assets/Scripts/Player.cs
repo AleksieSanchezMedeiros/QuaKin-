@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isOnLadder = false;
+        myRigidbody.gravityScale = 1;
         
     }
     // Start is called before the first frame update
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
             
              
         }
-        else
+        if (!isOnLadder)
         {
             Run();
             Jump();
