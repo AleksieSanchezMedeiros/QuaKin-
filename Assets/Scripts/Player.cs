@@ -12,6 +12,21 @@ public class Player : MonoBehaviour
     bool isOnLadder;
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] GameObject objecttoDestroy;
+    [SerializeField] GameObject objecttoDestroy2;
+    [SerializeField] GameObject objecttoDestroy3;
+    [SerializeField] GameObject objecttoDestroy4;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+            if (collision.collider.name == "Chest")
+            {
+                Destroy(objecttoDestroy);
+                Destroy(objecttoDestroy2);
+                Destroy(objecttoDestroy3);
+                Destroy(objecttoDestroy4);
+            }
+
+    }
 
     private void Run()
     {
@@ -43,6 +58,7 @@ public class Player : MonoBehaviour
         myRigidbody.gravityScale = 1;
         
     }
+
     // Start is called before the first frame update
     void Start()
     {

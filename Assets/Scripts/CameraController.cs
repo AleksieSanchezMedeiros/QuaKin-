@@ -26,6 +26,7 @@ public class CameraController : MonoBehaviour
         else
         {
             // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
+            offset.x += Mathf.Deg2Rad * Mathf.Sin(Time.realtimeSinceStartup * 10);
             transform.position = Player.position + offset;
         }
 

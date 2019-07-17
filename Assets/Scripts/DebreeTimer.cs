@@ -8,7 +8,7 @@ public class DebreeTimer : MonoBehaviour
 
     [SerializeField] GameObject debreePrefab;
     // setting varibles
-    float timer = 2f;
+    float timer = 5f;
     float randomX;
     float randomY;
 
@@ -16,8 +16,8 @@ public class DebreeTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        randomX = Random.Range(-10f, 2f);
-        randomY = Random.Range(32f, 5f);
+        randomX = Random.Range(-6f, 2f);
+        randomY = Random.Range(32f, 1f);
 
     }
     //counts down timer spawns object them resets timer
@@ -28,8 +28,8 @@ public class DebreeTimer : MonoBehaviour
 
         if (timer <= 0)
         {
-            timer = 2;
-            Vector2 newPowerPos = new Vector2(Random.Range(-10f, 2f),Random.Range(32f, 5f));
+            timer = 5f;
+            Vector2 newPowerPos = new Vector2(Random.Range(-6f, 2f),Random.Range(32f, 1f));
 
 
             GameObject fallingDebree = Instantiate(debreePrefab, newPowerPos, Quaternion.identity);
