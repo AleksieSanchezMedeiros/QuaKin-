@@ -1,7 +1,4 @@
-﻿//Permeet
-
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +12,9 @@ public class Player : MonoBehaviour
     bool isOnLadder;
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
+
+    private object DestroygameObject;
+
     [SerializeField] GameObject objecttoDestroy;
     [SerializeField] GameObject objecttoDestroy2;
     [SerializeField] GameObject objecttoDestroy3;
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     }
 
+    // Permeet
     private void Run()
     {
         float controlDirection = Input.GetAxis("Horizontal");
@@ -50,6 +51,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(!(Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.RightArrow))))
@@ -62,6 +69,7 @@ public class Player : MonoBehaviour
         
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,9 +77,9 @@ public class Player : MonoBehaviour
 
         myRigidbody = GetComponent<Rigidbody2D>();
     }
+
     
 
-    // Update is called once per frame
     void Update()
     {
         if (isOnLadder == true)
