@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     }
 
-
+    // Permeet
     private void Run()
     {
         float controlDirection = Input.GetAxis("Horizontal");
