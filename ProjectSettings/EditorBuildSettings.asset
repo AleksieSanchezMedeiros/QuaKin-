@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: bfb04918bd9559147a143f8ff9018c7d
+  - enabled: 1
     path: Assets/Scenes/Permeet.unity
     guid: 60de9ee3bc7d12343ae2cb51bdff89c7
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 60c32f1fc874787488e40c33fc6b6a6d
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: 5fc811bd547354b469eb97a7183803bd
   m_configObjects: {}
